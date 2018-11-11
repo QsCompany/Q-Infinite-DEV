@@ -1,0 +1,26 @@
+{
+    "name": "q-infinite-dev",
+    "version": "1.0.0",
+    "description": "project template using Q-InfiniteJS Framework and Q-Modulare module Loader",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "http-server -g -p 8082 | start http://127.0.0.1:8082"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/QsCompany/Q-Infinite-DEV.git"
+    },
+    "keywords": [
+        "Q-Framework;template;framework;dev"
+    ],
+    "author": "Achour Brahim",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/QsCompany/Q-Infinite-DEV/issues"
+    },
+    "homepage": "https://github.com/QsCompany/Q-Infinite-DEV#readme",
+
+}
