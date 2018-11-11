@@ -1,5 +1,5 @@
 function load() {
-    define('entrypoint', [`./lib/InfiniteJs.js`], (q, myApp) => {
+    define('entrypoint', [`lib:lib|./lib/InfiniteJs.js`], (q, myApp) => {
         require(`./dist/app.js`, (r) => {});
     });
 }
