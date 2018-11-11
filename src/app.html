@@ -1,0 +1,79 @@
+<templates>
+    <require module='style|../assets/app.css'></require>
+    <template name="app">
+        <example class="container">
+            <div class="row">
+                <h1>Example 1 : Strings</h1><br>
+                <div class="col-md-8" db-bind="Interpolation.Value">
+                    <div class="kirow" class="row">
+                        <label class="kicnt kibtn">Entrer a value</label>
+                        <input class="kicnt kitext input form-control" db-job="input" autocomplete="off">
+                    </div>
+                    <div>
+                        <div class="kirow">
+                            <div class="kicnt" db-str on-click="$global.alert(data)">
+                                You Entred {{data}}&#10;
+                                Value length is {{length}}&#10;
+                                First Char of Value is {{data[0]}}&#10;
+                                First CharCode of Value is {{charCodeAt(0)}}&#10;
+                            </div>
+                        </div>
+                        <div class="kirow">
+                            <button class="btn btn-default" on-click='this.trim'>Trim</button>
+                            <button class="btn btn-primary" on-click='this.upper'>Uper case</button>
+                            <button class="btn btn-danger" on-click='this.[:example].clear'>Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <h1>Example 2 </h1><br>
+                <div class="col-md-8" db-bind="Interpolation.Number">
+                    <div class="kirow" class="row">
+                        <label class="kicnt kibtn">Entrer a value</label>
+                        <input db-job="number" db-twoway="true" class="kicnt kitext input form-control" autocomplete="off">
+                    </div>
+                    <div>
+                        <div class="kirow">
+                            <div class="kicnt" db-str on-click="$global.alert(data)">
+                                isNan : {{$global.isNaN(data)}};
+                                isFinite : {{$global.isFinite(data)}};
+                                Is Integer {{$global.Number.isInteger(data)}}&#10;
+                                Sin of {{data}} is {{$global.Math.sin(data)}}
+                                SwapedValues {{^.Interpolation.swapNumber(data)}}
+                            </div>
+                        </div>
+                        <div class="kirow">
+                            <button class="btn btn-default" on-click='this.incr'>Add 1</button>
+                            <button class="btn btn-primary" on-click='this.decr'>Minus 1</button>
+                            <button class="btn btn-danger" on-click='this.add(*tmp)'>Add a Value</button>
+                            <input db-job="number" db-bind="*tmp" db-twoway="true" type="number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <h1>Example 3 : Enums</h1>
+                <br>
+
+                <div class="col-md-8" db-bind="Interpolation.Day">
+                    <div class="kirow" class="row">
+                        <label class="kicnt kibtn">Select a day</label>
+                        <input db-job="enumoption" enum="DayOfWeek" db-twoway="true" class="kicnt kitext input form-control" autocomplete="off">
+                    </div>
+                    <div>
+                        <div class="kirow">
+                            <div class="kicnt" db-str on-click="$global.alert(data)">
+                                You selected
+                                <text db-job="enum2string" type="DayOfWeek"></text>
+                                ( <text db-job="number"></text> )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </example>
+    </template>
+</templates>
